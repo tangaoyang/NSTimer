@@ -8,10 +8,13 @@
 
 #import "TimeViewController.h"
 #import "NSTimer+BlocksSupport.h"
+#import "TAYProxy.h"
+#import "TAYWeakProxy.h"
+
 
 @interface TimeViewController ()
 
-@property (nonatomic,weak) NSTimer *timer;
+@property (nonatomic,strong) NSTimer *timer;
 
 @end
 
@@ -20,7 +23,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    __weak typeof(self) weakSelf = self;
+    // 创建 NSTimer
+//    NSTimer *aTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(doSomething) userInfo:nil repeats:YES];
+//    // 赋值给 weak 变量
+//    self.timer = aTimer;
+//    // NSTimer 加入 NSRunLoop
+//    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+//    if (self.timer == nil) {
+//        NSLog(@"timer 被释放了");
+//    }
+    
+    // 使用weakSelf
+    
+    
+    
+    // 中间代理对象
+//    self.timer = [NSTimer timerWithTimeInterval:1.0 target:[TAYProxy proxyWithTarget:self] selector:@selector(doSomething) userInfo:nil repeats:YES];
+//    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+    
+    
+    
+}
+
+- (void)doSomething {
+    NSLog(@"doSomething");
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self dismissViewControllerAnimated:NO completion:nil];
+}
+
+- (void)dealloc {
+    NSLog(@"dealloc");
+    // ViewController执行dealloc时timer也销毁
+    [self.timer invalidate];
+}
+    
+//    __weak typeof(self) weakSelf = self;
 //
 //    // NSTimer 创建之后没有被自动加入 RunLoop
 //    self.timer = [NSTimer timerWithTimeInterval:1.0 target:weakSelf selector:@selector(outputLog:) userInfo:nil repeats:YES];
@@ -30,30 +69,30 @@
 //    }
     
     // 创建 NSTimer
-    NSTimer *doNotWorkTimer = [NSTimer timerWithTimeInterval:1.0 target:weakSelf selector:@selector(outputLog:) userInfo:nil repeats:YES];
-    // 赋值给 weak 变量
-    self.timer = doNotWorkTimer;
-    // NSTimer 加入 NSRunLoop
-    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
+//    NSTimer *doNotWorkTimer = [NSTimer timerWithTimeInterval:1.0 target:weakSelf selector:@selector(outputLog:) userInfo:nil repeats:YES];
+//    // 赋值给 weak 变量
+//    self.timer = doNotWorkTimer;
+//    // NSTimer 加入 NSRunLoop
+//    [[NSRunLoop currentRunLoop] addTimer:self.timer forMode:NSDefaultRunLoopMode];
     
 //    self.timer =[NSTimer xx_scheduledTimerWithTimeInterval:1.0 repeats:YES block:^{
 //        NSLog(@"it is log!");
 //    }];
     
-}
+//}
 
 - (void)outputLog:(NSTimer *)timer {
     NSLog(@"it is log!");
 }
 
-- (void)dealloc {
-    [self.timer invalidate];
-    NSLog(@"TimerViewController dealloc!");
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self dismissViewControllerAnimated:NO completion:nil];
-}
+//- (void)dealloc {
+//    [self.timer invalidate];
+//    NSLog(@"TimerViewController dealloc!");
+//}
+//
+//- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    [self dismissViewControllerAnimated:NO completion:nil];
+//}
 
 /*
 #pragma mark - Navigation

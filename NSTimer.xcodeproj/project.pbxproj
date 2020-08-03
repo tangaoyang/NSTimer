@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		86173E0124D80BA200132F68 /* TAYProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86173E0024D80BA200132F68 /* TAYProxy.m */; };
+		86173E0424D8352E00132F68 /* TAYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 86173E0324D8352E00132F68 /* TAYWeakProxy.m */; };
 		8682E9D024D7A83600DF3311 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8682E9CF24D7A83600DF3311 /* AppDelegate.m */; };
 		8682E9D324D7A83600DF3311 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8682E9D224D7A83600DF3311 /* ViewController.m */; };
 		8682E9D624D7A83600DF3311 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8682E9D424D7A83600DF3311 /* Main.storyboard */; };
@@ -18,6 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		86173DFF24D80BA200132F68 /* TAYProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAYProxy.h; sourceTree = "<group>"; };
+		86173E0024D80BA200132F68 /* TAYProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAYProxy.m; sourceTree = "<group>"; };
+		86173E0224D8352E00132F68 /* TAYWeakProxy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TAYWeakProxy.h; sourceTree = "<group>"; };
+		86173E0324D8352E00132F68 /* TAYWeakProxy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TAYWeakProxy.m; sourceTree = "<group>"; };
 		8682E9CB24D7A83600DF3311 /* NSTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8682E9CE24D7A83600DF3311 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8682E9CF24D7A83600DF3311 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -70,8 +76,12 @@
 				8682E9D224D7A83600DF3311 /* ViewController.m */,
 				8682E9E424D7A87A00DF3311 /* TimeViewController.h */,
 				8682E9E524D7A87A00DF3311 /* TimeViewController.m */,
+				86173E0224D8352E00132F68 /* TAYWeakProxy.h */,
+				86173E0324D8352E00132F68 /* TAYWeakProxy.m */,
 				8682E9E724D7A9F100DF3311 /* NSTimer+BlocksSupport.h */,
 				8682E9E824D7A9F100DF3311 /* NSTimer+BlocksSupport.m */,
+				86173DFF24D80BA200132F68 /* TAYProxy.h */,
+				86173E0024D80BA200132F68 /* TAYProxy.m */,
 				8682E9D424D7A83600DF3311 /* Main.storyboard */,
 				8682E9D724D7A83F00DF3311 /* Assets.xcassets */,
 				8682E9D924D7A83F00DF3311 /* LaunchScreen.storyboard */,
@@ -153,7 +163,9 @@
 			files = (
 				8682E9E924D7A9F100DF3311 /* NSTimer+BlocksSupport.m in Sources */,
 				8682E9D324D7A83600DF3311 /* ViewController.m in Sources */,
+				86173E0424D8352E00132F68 /* TAYWeakProxy.m in Sources */,
 				8682E9E624D7A87A00DF3311 /* TimeViewController.m in Sources */,
+				86173E0124D80BA200132F68 /* TAYProxy.m in Sources */,
 				8682E9DE24D7A83F00DF3311 /* main.m in Sources */,
 				8682E9D024D7A83600DF3311 /* AppDelegate.m in Sources */,
 			);

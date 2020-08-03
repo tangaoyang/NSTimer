@@ -10,10 +10,7 @@
 
 @implementation NSTimer (BlocksSupport)
 
-+ (NSTimer *)xx_scheduledTimerWithTimeInterval:(NSTimeInterval)interval
-                                       repeats:(BOOL)repeats
-                                         block:(void(^)())block;
-{
++ (NSTimer *)xx_scheduledTimerWithTimeInterval:(NSTimeInterval)interval repeats:(BOOL)repeats block:(void(^)())block {
     return [self scheduledTimerWithTimeInterval:interval
                                          target:self
                                        selector:@selector(xx_blockInvoke:)
@@ -21,7 +18,7 @@
                                         repeats:repeats];
 }
 + (void)xx_blockInvoke:(NSTimer *)timer {
-    void (^block)() = timer.userInfo;
+    void (^block)(void) = timer.userInfo;
     if(block) {
         block();
     }
